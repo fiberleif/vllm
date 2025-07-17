@@ -375,6 +375,8 @@ class SamplingParams(
         if self.stop and not self.include_stop_str_in_output:
             self.output_text_buffer_length = max(len(s) for s in self.stop) - 1
 
+        print("self.stop_token_ids:", self.stop_token_ids)
+        print("type(self.stop_token_ids):", type(self.stop_token_ids))
         self._verify_args()
 
         if self.temperature < _SAMPLING_EPS:
